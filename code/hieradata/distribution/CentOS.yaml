@@ -1,2 +1,2 @@
 ---
-openstack::repo: centos-release-openstack-liberty 
+openstack::repo::package: centos-release-openstack-liberty
