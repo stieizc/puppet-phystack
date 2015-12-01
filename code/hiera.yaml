@@ -1,0 +1,10 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: &datadir '%{::settings::codedir}/hieradata'
+:hierarchy:
+  - 'node/%{::trusted.certname}'
+  - 'distribution/%{::facts.operatingsystem}'
+  - 'distribution/%{::facts.osfamily}'
+  - common

@@ -1,0 +1,9 @@
+*.sw*
+*~
+*#
+.#*
+
+/var/
+/code/modules/
+/code/.tmp/
+/keyrings/live/secring.gpg
