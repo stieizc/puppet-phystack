@@ -9,7 +9,7 @@ forge "https://forgeapi.puppetlabs.com"
 # use dependencies defined in Modulefile
 # modulefile
 
-#mod 'puppetlabs/inifile'
+#mod 'puppetlabs/mysql'
 #mod 'puppetlabs/vcsrepo'
 #mod 'puppetlabs/stdlib'
 
