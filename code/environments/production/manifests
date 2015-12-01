@@ -1,8 +1,8 @@
 # -*- mode: Puppet -*-
 node 'phystack' {
   include role::base
-  include role::controller
-  include role::network
-  include role::image
-  include role::compute
+  #include role::controller
+  #include role::network
+  #include role::image
+  #include role::compute
 }
