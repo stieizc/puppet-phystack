@@ -1,6 +1,6 @@
 # Openstack repo setup
 class openstack::repo {
-  require repositories::epel
+  require repository::epel
   $repo_package = hiera('openstack::repo::package')
   if $::osfamily == 'RedHat' {
     package { $repo_package:
