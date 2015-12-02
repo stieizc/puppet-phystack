@@ -9,6 +9,7 @@ forge "https://forgeapi.puppetlabs.com"
 # use dependencies defined in Modulefile
 # modulefile
 
+mod 'aboe/chrony'
 #mod 'puppetlabs/mysql'
 #mod 'puppetlabs/vcsrepo'
 #mod 'puppetlabs/stdlib'

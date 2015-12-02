@@ -1,0 +1,10 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    aboe-chrony (0.1.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-stdlib (4.9.0)
+
+DEPENDENCIES
+  aboe-chrony (>= 0)
+
