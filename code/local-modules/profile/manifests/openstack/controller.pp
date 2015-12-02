@@ -2,4 +2,5 @@
 class profile::openstack::controller {
   include profile::ntp::client
   include openstack::base
+  include profile::database
 }
