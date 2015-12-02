@@ -11,6 +11,8 @@ forge "https://forgeapi.puppetlabs.com"
 
 mod 'aboe/chrony'
 mod 'puppetlabs/mysql'
+mod 'puppetlabs/rabbitmq',
+    :git => 'git@github.com:stieizc/puppetlabs-rabbitmq.git'
 #mod 'puppetlabs/vcsrepo'
 #mod 'puppetlabs/stdlib'
 

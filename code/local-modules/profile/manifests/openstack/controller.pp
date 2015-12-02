@@ -1,6 +1,7 @@
 # Profile for controller setup
 class profile::openstack::controller {
-  include profile::ntp::client
   include openstack::base
+  include profile::ntp::client
   include profile::database
+  include profile::mq
 }
