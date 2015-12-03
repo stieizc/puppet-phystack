@@ -13,8 +13,14 @@ mod 'aboe/chrony'
 mod 'puppetlabs/mysql'
 mod 'puppetlabs/rabbitmq',
     :git => 'git@github.com:stieizc/puppetlabs-rabbitmq.git'
+mod 'openstack/keystone'
+# Solve dependency issue between rabbitmq & openstacklib
+mod 'puppetlabs/apt', '1.8.0'
+mod 'puppetlabs/stdlib'
 #mod 'puppetlabs/vcsrepo'
-#mod 'puppetlabs/stdlib'
+
+exclusion 'puppetlabs/postgresql'
+exclusion 'puppetlabs/apt'
 
 # A module from git
 # mod 'puppetlabs-ntp',
