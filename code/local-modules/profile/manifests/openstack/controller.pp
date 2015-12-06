@@ -5,8 +5,8 @@ class profile::openstack::controller {
   include profile::database
   include profile::mq
   include openstack::keystone
-  Class['openstack::base'] -> Class['openstack::keystone']
   Class['profile::ntp::client'] -> Class['profile::mq']
-  -> Class['openstack::keystone']
-  Class['profile::database'] -> Class['openstack::keystone']
+  [
+    Class['openstack::base'], Class['profile::mq'], Class['profile::database']
+  ] -> Class['openstack::keystone']
 }
