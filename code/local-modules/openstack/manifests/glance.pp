@@ -9,6 +9,8 @@ inherits openstack::glance::params {
     keystone_tenant     => 'service',
     database_connection => $openstack::glance::params::db_url,
     auth_uri            => ['http://localhost:5000', 'http://localhost:35357'],
+    bind_host           => 'localhost',
+    registry_host       => 'localhost',
   }
 
   glance_api_config { 'DEFAULT/notification_driver':
