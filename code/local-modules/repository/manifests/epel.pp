@@ -1,5 +1,5 @@
 # Enable EPEL repository
-class epel {
+class repository::epel {
   if $::osfamily == 'RedHat' and $::operatingsystem !~ /Fedora/ {
     package { 'epel-release':
       ensure => latest,
