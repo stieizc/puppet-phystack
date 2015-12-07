@@ -14,6 +14,8 @@ mod 'puppetlabs/mysql'
 mod 'puppetlabs/rabbitmq',
     :git => 'git@github.com:stieizc/puppetlabs-rabbitmq.git'
 mod 'openstack/keystone'
+mod 'openstack/glance'
+
 # Solve dependency issue between rabbitmq & openstacklib
 mod 'puppetlabs/apt', '1.8.0'
 mod 'puppetlabs/stdlib'

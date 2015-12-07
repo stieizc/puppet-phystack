@@ -4,6 +4,11 @@ FORGE
     aboe-chrony (0.1.0)
       puppetlabs-stdlib (>= 2.2.1)
     nanliu-staging (1.0.3)
+    openstack-glance (7.0.0)
+      openstack-keystone (< 8.0.0, >= 7.0.0)
+      openstack-openstacklib (< 8.0.0, >= 7.0.0)
+      puppetlabs-inifile (< 2.0.0, >= 1.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
     openstack-keystone (7.0.0)
       openstack-openstacklib (< 8.0.0, >= 7.0.0)
       puppetlabs-apache (< 2.0.0, >= 1.0.0)
@@ -38,7 +43,7 @@ FORGE
 GIT
   remote: git@github.com:stieizc/puppetlabs-rabbitmq.git
   ref: master
-  sha: ae9724a3d4109f0345a15543714aeb79fa8a588c
+  sha: d4914e1cec8ef1606a44da9690eed3d63660cf40
   specs:
     puppetlabs-rabbitmq (5.3.1)
       nanliu-staging (< 2.0.0, >= 0.3.1)
@@ -47,6 +52,7 @@ GIT
 
 DEPENDENCIES
   aboe-chrony (>= 0)
+  openstack-glance (>= 0)
   openstack-keystone (>= 0)
   puppetlabs-apt (= 1.8.0)
   puppetlabs-mysql (>= 0)
