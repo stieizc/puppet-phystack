@@ -8,7 +8,8 @@ inherits openstack::glance::params {
     keystone_password   => $openstack::glance::params::keystone_password,
     keystone_tenant     => 'service',
     database_connection => $openstack::glance::params::db_url,
-    auth_uri            => ['http://localhost:5000', 'http://localhost:35357'],
+    auth_uri            => 'http://localhost:5000',
+    auth_url            => 'http://localhost:35357',
     bind_host           => 'localhost',
     registry_host       => 'localhost',
   }
@@ -24,8 +25,9 @@ inherits openstack::glance::params {
     keystone_password   => $openstack::glance::params::keystone_password,
     keystone_tenant     => 'service',
     database_connection => $openstack::glance::params::db_url,
-    auth_uri            => ['http://localhost:5000', 'http://localhost:35357'],
+    auth_uri            => 'http://localhost:5000',
   }
+  glance_registry_config { 'keystone_authtoken/auth_url': value => 'http://localhost:35357'; }
 
   glance_registry_config { 'DEFAULT/notification_driver':
     ensure => 'present',

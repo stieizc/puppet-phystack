@@ -17,20 +17,21 @@ class openstack::nova::params {
 
   $override_options = {
     'DEFAULT' => {
-      'my_ip'                     => $::ipaddress,
-      'network_api_class'         => 'nova.network.neutronv2.api.API',
-      'security_group_api'        => 'neutron',
-      'linuxnet_interface_driver' =>
+      my_ip                     => $::ipaddress,
+      network_api_class         => 'nova.network.neutronv2.api.API',
+      security_group_api        => 'neutron',
+      linuxnet_interface_driver =>
       'nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver',
-      'firewall_driver'           => 'nova.virt.firewall.NoopFirewallDriver',
+      firewall_driver           => 'nova.virt.firewall.NoopFirewallDriver',
+      auth_url                  => 'http://localhost:35357',
     },
     'vnc' => {
-      'enabled'                       => 'True',
-      'vncserver_listen'              => '0.0.0.0',
-      'novncproxy_base_url'           => "http://${::ipaddress}:6080/vnc_auto.html",
+      enabled                       => 'True',
+      vncserver_listen              => '0.0.0.0',
+      novncproxy_base_url           => "http://${::ipaddress}:6080/vnc_auto.html",
     },
     'glance' => {
-      'host' => 'localhost',
+      host => 'localhost',
     },
   }
 }

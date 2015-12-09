@@ -11,7 +11,7 @@ inherits openstack::nova::params {
     admin_user        => $openstack::nova::params::keystone_user,
     admin_password    => $openstack::nova::params::keystone_password,
     admin_tenant_name => 'service',
-    auth_uri          => ['http://localhost:5000', 'http://localhost:35357'],
+    auth_uri          => 'http://localhost:5000',
     enabled_apis      => 'osapi_compute,metadata',
   }
   class { '::nova::conductor':
