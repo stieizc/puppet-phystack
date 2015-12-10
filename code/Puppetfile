@@ -17,6 +17,8 @@ mod 'openstack/keystone'
 mod 'openstack/glance'
 mod 'openstack/nova',
     :git => 'git@github.com:stieizc/puppet-nova.git'
+mod 'openstack/neutron',
+    :git => 'https://github.com/openstack/puppet-neutron.git'
 
 # Solve dependency issue between rabbitmq & openstacklib
 mod 'puppetlabs/apt', '1.8.0'

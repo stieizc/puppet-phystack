@@ -31,6 +31,7 @@ FORGE
       puppetlabs-postgresql (< 4.0.0, >= 3.3.0)
       puppetlabs-rabbitmq (< 6.0.0, >= 2.0.2)
       puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
+    openstack-vswitch (3.0.0)
     puppetlabs-apache (1.7.1)
       puppetlabs-concat (< 2.0.0, >= 1.1.1)
       puppetlabs-stdlib (< 5.0.0, >= 2.4.0)
@@ -53,7 +54,7 @@ FORGE
 GIT
   remote: git@github.com:stieizc/puppet-nova.git
   ref: master
-  sha: 257886c81c154dd159c1b76f0171e38c4ff5f08b
+  sha: 75864f5ae8c34753bf257d97ff8f73f46646bbb0
   specs:
     openstack-nova (7.0.0)
       dprince-qpid (< 2.0.0, >= 1.0.0)
@@ -76,10 +77,25 @@ GIT
       puppetlabs-apt (< 3.0.0, >= 1.8.0)
       puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
 
+GIT
+  remote: https://github.com/openstack/puppet-neutron.git
+  ref: master
+  sha: 921a4e551e61f044c75c7a0fc0ecbc6eb9a5c149
+  specs:
+    openstack-neutron (7.0.0)
+      duritong-sysctl (< 1.0.0, >= 0.0.1)
+      openstack-keystone (< 8.0.0, >= 7.0.0)
+      openstack-nova (< 8.0.0, >= 7.0.0)
+      openstack-openstacklib (< 8.0.0, >= 7.0.0)
+      openstack-vswitch (< 4.0.0, >= 3.0.0)
+      puppetlabs-inifile (< 2.0.0, >= 1.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
+
 DEPENDENCIES
   aboe-chrony (>= 0)
   openstack-glance (>= 0)
   openstack-keystone (>= 0)
+  openstack-neutron (>= 0)
   openstack-nova (>= 0)
   puppetlabs-apt (= 1.8.0)
   puppetlabs-mysql (>= 0)

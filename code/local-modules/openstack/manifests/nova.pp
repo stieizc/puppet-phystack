@@ -1,7 +1,9 @@
 # Openstack Nova setup
 class openstack::nova
 inherits openstack::nova::params {
-  include 'openstack::nova::credentials'
+  include openstack::nova::credentials
+  include openstack::neutron::params
+
   class { '::nova':
     database_connection => $openstack::nova::params::db_url,
     rabbit_userid       => $openstack::nova::params::rabbit_user,
@@ -13,6 +15,8 @@ inherits openstack::nova::params {
     admin_tenant_name => 'service',
     auth_uri          => 'http://localhost:5000',
     enabled_apis      => 'osapi_compute,metadata',
+    neutron_metadata_proxy_shared_secret =>
+    $openstack::neutron::params::metadata_shared_secret,
   }
   class { '::nova::conductor':
     use_local      => true,
@@ -42,4 +46,6 @@ inherits openstack::nova::params {
       }
     }
   }
+
+  include openstack::nova::network
 }
