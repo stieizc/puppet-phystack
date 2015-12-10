@@ -7,3 +7,6 @@
 /code/modules/
 /code/.tmp/
 /keyrings/live/secring.gpg
+/keyrings/live/pubring.gpg~
+/keyrings/live/pubring.kbx~
+/code/hieradata/common.yaml
