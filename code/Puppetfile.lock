@@ -19,6 +19,10 @@ FORGE
       openstack-openstacklib (< 8.0.0, >= 7.0.0)
       puppetlabs-inifile (< 2.0.0, >= 1.0.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+    openstack-horizon (7.0.0)
+      puppetlabs-apache (< 2.0.0, >= 1.2.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
+      saz-memcached (< 3.0.0, >= 2.0.2)
     openstack-keystone (7.0.0)
       openstack-openstacklib (< 8.0.0, >= 7.0.0)
       puppetlabs-apache (< 2.0.0, >= 1.0.0)
@@ -50,6 +54,9 @@ FORGE
       puppetlabs-firewall (>= 0.0.4)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs-stdlib (4.9.1)
+    saz-memcached (2.8.1)
+      puppetlabs-firewall (>= 0.1.0)
+      puppetlabs-stdlib (>= 3.2.0)
 
 GIT
   remote: git@github.com:stieizc/puppet-nova.git
@@ -80,7 +87,7 @@ GIT
 GIT
   remote: https://github.com/openstack/puppet-neutron.git
   ref: master
-  sha: 921a4e551e61f044c75c7a0fc0ecbc6eb9a5c149
+  sha: 4544693d9516c1e3b5f43b0bafcdca0150952b8d
   specs:
     openstack-neutron (7.0.0)
       duritong-sysctl (< 1.0.0, >= 0.0.1)
@@ -94,6 +101,7 @@ GIT
 DEPENDENCIES
   aboe-chrony (>= 0)
   openstack-glance (>= 0)
+  openstack-horizon (>= 0)
   openstack-keystone (>= 0)
   openstack-neutron (>= 0)
   openstack-nova (>= 0)
