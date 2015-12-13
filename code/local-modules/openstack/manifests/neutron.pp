@@ -21,7 +21,7 @@ inherits openstack::neutron::params {
     database_connection => $openstack::neutron::params::db_url,
     sync_db             => true,
   }
-  neutron_config { 'keystone_auth_token/auth_url': value => 'http://localhost:35357' }
+  neutron_config { 'keystone_authtoken/auth_url': value => 'http://localhost:35357' }
   class { '::neutron::server::notifications':
     username     => $openstack::nova::params::keystone_user,
     password     => $openstack::nova::params::keystone_password,
