@@ -1,6 +1,8 @@
 # Openstack Neutron Setup
 class openstack::neutron
 inherits openstack::neutron::params {
+  include openstack::nova::params
+
   include openstack::neutron::credentials
   class { '::neutron':
     bind_host             => 'localhost',
@@ -12,17 +14,17 @@ inherits openstack::neutron::params {
     rabbit_password       => $openstack::neutron::params::rabbit_password,
   }
   class { '::neutron::server':
-    auth_user     => $openstack::neutron::params::keystone_user,
-    auth_password => $openstack::neutron::params::keystone_password,
-    auth_tenant   => 'service',
-    auth_uri      => 'http://localhost:5000',
+    auth_user           => $openstack::neutron::params::keystone_user,
+    auth_password       => $openstack::neutron::params::keystone_password,
+    auth_tenant         => 'service',
+    auth_uri            => 'http://localhost:5000',
     database_connection => $openstack::neutron::params::db_url,
-    sync_db       => true,
+    sync_db             => true,
   }
   neutron_config { 'keystone_auth_token/auth_url': value => 'http://localhost:35357' }
   class { '::neutron::server::notifications':
-    username     => $openstack::neutron::params::keystone_user,
-    password     => $openstack::neutron::params::keystone_password,
+    username     => $openstack::nova::params::keystone_user,
+    password     => $openstack::nova::params::keystone_password,
     project_name => 'service',
     auth_url     => 'http://localhost:35357',
   }
