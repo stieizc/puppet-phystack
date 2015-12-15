@@ -21,7 +21,6 @@ inherits openstack::keystone::params {
   }
 
   class { '::keystone::wsgi::apache':
-    servername => $::ipaddress,
     ssl        => false,
   }
 
