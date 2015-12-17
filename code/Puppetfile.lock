@@ -53,15 +53,21 @@ FORGE
       puppetlabs-concat (< 2.0.0, >= 1.0.0)
       puppetlabs-firewall (>= 0.0.4)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
-    puppetlabs-stdlib (4.9.1)
+    puppetlabs-rabbitmq (5.3.1)
+      nanliu-staging (< 2.0.0, >= 0.3.1)
+      puppetlabs-apt (< 3.0.0, >= 1.8.0)
+      puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
+    puppetlabs-stdlib (4.10.0)
     saz-memcached (2.8.1)
       puppetlabs-firewall (>= 0.1.0)
       puppetlabs-stdlib (>= 3.2.0)
+    stahnma-epel (1.2.2)
+      puppetlabs-stdlib (>= 3.0.0)
 
 GIT
   remote: git@github.com:stieizc/puppet-nova.git
   ref: master
-  sha: 75864f5ae8c34753bf257d97ff8f73f46646bbb0
+  sha: 46598ab12b23212ee0aebea0c2a4e9cf2d33d77e
   specs:
     openstack-nova (7.0.0)
       dprince-qpid (< 2.0.0, >= 1.0.0)
@@ -77,7 +83,7 @@ GIT
 GIT
   remote: https://github.com/openstack/puppet-neutron.git
   ref: master
-  sha: 965cd4c8aeecc7d052936a813532339d57e3da0f
+  sha: 23875c218f802e3cc8f2f8f6fa09d89e97194878
   specs:
     openstack-neutron (7.0.0)
       duritong-sysctl (< 1.0.0, >= 0.0.1)
@@ -87,16 +93,6 @@ GIT
       openstack-vswitch (< 4.0.0, >= 3.0.0)
       puppetlabs-inifile (< 2.0.0, >= 1.0.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
-
-GIT
-  remote: https://github.com/puppetlabs/puppetlabs-rabbitmq.git
-  ref: master
-  sha: 3c91d9750bce8f88830b44e07bad7acc55f8ac34
-  specs:
-    puppetlabs-rabbitmq (5.3.1)
-      nanliu-staging (< 2.0.0, >= 0.3.1)
-      puppetlabs-apt (< 3.0.0, >= 1.8.0)
-      puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
 
 DEPENDENCIES
   aboe-chrony (>= 0)
@@ -109,4 +105,5 @@ DEPENDENCIES
   puppetlabs-mysql (>= 0)
   puppetlabs-rabbitmq (>= 0)
   puppetlabs-stdlib (>= 0)
+  stahnma-epel (>= 0)
 
