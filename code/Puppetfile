@@ -9,6 +9,7 @@ forge "https://forgeapi.puppetlabs.com"
 # use dependencies defined in Modulefile
 # modulefile
 
+mod 'stahnma/epel'
 mod 'aboe/chrony'
 mod 'puppetlabs/mysql'
 mod 'puppetlabs/rabbitmq',
