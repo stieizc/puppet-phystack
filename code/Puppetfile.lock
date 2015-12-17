@@ -75,19 +75,9 @@ GIT
       puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
 
 GIT
-  remote: git@github.com:stieizc/puppetlabs-rabbitmq.git
-  ref: master
-  sha: 9339ea803a7eadb3ce9c69ea9244c729a53faf3a
-  specs:
-    puppetlabs-rabbitmq (5.3.1)
-      nanliu-staging (< 2.0.0, >= 0.3.1)
-      puppetlabs-apt (< 3.0.0, >= 1.8.0)
-      puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
-
-GIT
   remote: https://github.com/openstack/puppet-neutron.git
   ref: master
-  sha: 4544693d9516c1e3b5f43b0bafcdca0150952b8d
+  sha: 965cd4c8aeecc7d052936a813532339d57e3da0f
   specs:
     openstack-neutron (7.0.0)
       duritong-sysctl (< 1.0.0, >= 0.0.1)
@@ -97,6 +87,16 @@ GIT
       openstack-vswitch (< 4.0.0, >= 3.0.0)
       puppetlabs-inifile (< 2.0.0, >= 1.0.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
+
+GIT
+  remote: https://github.com/puppetlabs/puppetlabs-rabbitmq.git
+  ref: master
+  sha: 3c91d9750bce8f88830b44e07bad7acc55f8ac34
+  specs:
+    puppetlabs-rabbitmq (5.3.1)
+      nanliu-staging (< 2.0.0, >= 0.3.1)
+      puppetlabs-apt (< 3.0.0, >= 1.8.0)
+      puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
 
 DEPENDENCIES
   aboe-chrony (>= 0)

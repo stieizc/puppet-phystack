@@ -8,7 +8,6 @@ inherits openstack::horizon::params {
     allowed_hosts         => '*',
     secret_key            => $openstack::horizon::params::secret,
     keystone_default_role => 'user',
-    servername            => $::ipaddress,
   }
   ->
   file_line { 'horizon time zone':
