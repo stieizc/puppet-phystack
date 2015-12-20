@@ -2,16 +2,18 @@
 
 class openstack::keystone
 inherits openstack::keystone::params {
-  class { '::memcached': }
-  ->
-  class { '::keystone':
-    database_connection => $openstack::keystone::params::db_url,
-    admin_token         => $openstack::keystone::params::admin_token,
-    token_provider      => 'uuid',
-    token_driver        => 'memcache',
-    memcache_servers    => ['localhost:11211'],
-    revoke_driver       => 'sql',
-    service_name        => 'httpd',
+  require '::memcached'
+
+  include '::keystone::client'
+
+  package { $openstack::keystone::params::packages:
+    ensure => latest,
+  }
+
+  file { '/etc/keystone/keystone.conf':
+    ensure  => file,
+    content => template('openstack/keystone/keystone.conf.erb'),
+    notice  => Service['httpd']
   }
 
   class { '::keystone::db::mysql':
@@ -20,8 +22,10 @@ inherits openstack::keystone::params {
     dbname   => $openstack::keystone::params::db_name,
   }
 
+  include '::keystone::db::sync'
+
   class { '::keystone::wsgi::apache':
-    ssl        => false,
+    ssl => false,
   }
 
   include 'openstack::keystone::credentials'

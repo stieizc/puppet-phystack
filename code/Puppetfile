@@ -16,19 +16,14 @@ mod 'puppetlabs/rabbitmq',
     :git => 'https://github.com/puppetlabs/puppetlabs-rabbitmq.git'
 mod 'openstack/keystone'
 mod 'openstack/glance'
-mod 'openstack/nova',
-    :git => 'git@github.com:stieizc/puppet-nova.git'
-mod 'openstack/neutron',
-    :git => 'https://github.com/openstack/puppet-neutron.git'
+mod 'openstack/nova'
+mod 'openstack/neutron'
 mod 'openstack/horizon'
 
 # Solve dependency issue between rabbitmq & openstacklib
 mod 'puppetlabs/apt', '1.8.0'
 mod 'puppetlabs/stdlib'
 #mod 'puppetlabs/vcsrepo'
-
-exclusion 'puppetlabs/postgresql'
-exclusion 'puppetlabs/apt'
 
 # A module from git
 # mod 'puppetlabs-ntp',
