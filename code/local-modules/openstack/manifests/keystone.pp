@@ -12,9 +12,9 @@ inherits openstack::keystone::params {
 
   file { '/etc/keystone/keystone.conf':
     ensure  => file,
-    content => template('openstack/keystone/keystone.conf.erb'),
+    content => epp('openstack/keystone/keystone.conf.epp'),
     backup  => '.puppet-bak',
-    notice  => Service['httpd'],
+    notify  => Service['httpd'],
   }
 
   class { '::keystone::db::mysql':
