@@ -1,0 +1,16 @@
+[database]
+connection = <%= $openstack::glance::params::db_url %>
+notification_driver = noop
+
+[keystone_authtoken]
+auth_uri = http://localhost:5000
+auth_url = http://localhost:35357
+auth_plugin = password
+project_domain_id = default
+user_domain_id = default
+project_name = service
+username = <%= $openstack::glance::params::keystone_user %>
+password = <%= $openstack::glance::params::keystone_password %>
+
+[paste_deploy]
+flavor = keystone

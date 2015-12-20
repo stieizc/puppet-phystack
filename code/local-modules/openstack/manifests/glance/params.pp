@@ -11,4 +11,5 @@ class openstack::glance::params {
   $keystone_user_data = hiera('keystone::accounts')['glance']
   $keystone_user = $keystone_user_data['user']
   $keystone_password = $keystone_user_data['password']
+  $packages = [openstack-glance, python-glance, python-glanceclient]
 }
