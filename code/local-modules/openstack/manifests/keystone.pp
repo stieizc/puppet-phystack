@@ -13,6 +13,7 @@ inherits openstack::keystone::params {
   file { '/etc/keystone/keystone.conf':
     ensure  => file,
     content => template('openstack/keystone/keystone.conf.erb'),
+    backup  => '.puppet-bak',
     notice  => Service['httpd'],
   }
 
