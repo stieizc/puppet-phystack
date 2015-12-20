@@ -2,9 +2,9 @@
 :backends:
   - yaml
 :yaml:
-  :datadir: &datadir '%{::settings::codedir}/hieradata'
+  :datadir: &datadir '%{::settings::confdir}/code/hieradata'
 :hierarchy:
-  - 'node/%{::trusted.certname}'
-  - 'distribution/%{::facts.operatingsystem}'
-  - 'distribution/%{::facts.osfamily}'
+  - 'node/%{::clientcert}'
+  - 'distribution/%{::operatingsystem}'
+  - 'distribution/%{::osfamily}'
   - common

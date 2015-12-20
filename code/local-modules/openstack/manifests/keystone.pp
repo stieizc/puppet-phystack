@@ -13,7 +13,7 @@ inherits openstack::keystone::params {
   file { '/etc/keystone/keystone.conf':
     ensure  => file,
     content => template('openstack/keystone/keystone.conf.erb'),
-    notice  => Service['httpd']
+    notice  => Service['httpd'],
   }
 
   class { '::keystone::db::mysql':
