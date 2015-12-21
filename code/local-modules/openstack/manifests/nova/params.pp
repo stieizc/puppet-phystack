@@ -15,20 +15,16 @@ class openstack::nova::params {
   $rabbit_user = $rabbit_user_data['name']
   $rabbit_password = $rabbit_user_data['password']
 
-  $override_options = {
-    'DEFAULT' => {
-      my_ip                     => $::ipaddress,
-      linuxnet_interface_driver =>
-      'nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver',
-      auth_url                  => 'http://localhost:35357',
-    },
-    'vnc' => {
-      enabled                       => 'True',
-      vncserver_listen              => '0.0.0.0',
-      novncproxy_base_url           => "http://${::ipaddress}:6080/vnc_auto.html",
-    },
-    'glance' => {
-      host => 'localhost',
-    },
-  }
+  $packages = [
+    openstack-nova-api, openstack-nova-cert,
+    openstack-nova-conductor, openstack-nova-console,
+    openstack-nova-novncproxy, openstack-nova-scheduler,
+    python-novaclient
+  ]
+
+  $services = [
+    openstack-nova-api, openstack-nova-cert, openstack-nova-consoleauth,
+    openstack-nova-scheduler, openstack-nova-conductor,
+    openstack-nova-novncproxy
+  ]
 }
