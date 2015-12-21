@@ -1,7 +1,7 @@
 [DEFAULT]
 rpc_backend = rabbit
 auth_strategy = keystone
-my_ip = localhost
+my_ip = <%= $::ipaddress %>
 network_api_class = nova.network.neutronv2.api.API
 security_group_api = neutron
 linuxnet_interface_driver = nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver
