@@ -6,12 +6,12 @@ class profile::openstack::controller {
   include profile::mq
   include openstack::keystone
   Class['Profile::Ntp::Client'] -> Class['Profile::Mq']
-  # [
-  #   Class['Openstack::Base'], Class['Profile::Mq'], Class['Profile::Database']
-  # ] -> Class['Openstack::Keystone']
+  [
+    Class['Openstack::Base'], Class['Profile::Mq'], Class['Profile::Database']
+  ] -> Class['Openstack::Keystone']
 
-  # include openstack::glance
-  # Class['Openstack::Keystone'] -> Class['Openstack::Glance']
+  include openstack::glance
+  Class['Openstack::Keystone'] -> Class['Openstack::Glance']
 
   # include openstack::nova
   # Class['Openstack::Keystone'] -> Class['Openstack::Nova']
