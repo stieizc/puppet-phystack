@@ -21,12 +21,14 @@ class openstack::nova::params {
     openstack-nova-api, openstack-nova-cert,
     openstack-nova-conductor, openstack-nova-console,
     openstack-nova-novncproxy, openstack-nova-scheduler,
-    python-novaclient
+    python-novaclient,
+    openstack-nova-compute, sysfsutils
   ]
 
   $services = [
     openstack-nova-api, openstack-nova-cert, openstack-nova-consoleauth,
     openstack-nova-scheduler, openstack-nova-conductor,
-    openstack-nova-novncproxy
+    openstack-nova-novncproxy,
+    libvirtd, openstack-nova-compute
   ]
 }
