@@ -15,6 +15,8 @@ class openstack::nova::params {
   $rabbit_user = $rabbit_user_data['name']
   $rabbit_password = $rabbit_user_data['password']
 
+  $config = '/etc/nova/nova.conf'
+
   $packages = [
     openstack-nova-api, openstack-nova-cert,
     openstack-nova-conductor, openstack-nova-console,

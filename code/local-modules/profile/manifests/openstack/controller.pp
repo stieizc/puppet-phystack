@@ -13,8 +13,8 @@ class profile::openstack::controller {
   include openstack::glance
   Class['Openstack::Keystone'] -> Class['Openstack::Glance']
 
-  # include openstack::nova
-  # Class['Openstack::Keystone'] -> Class['Openstack::Nova']
+  include openstack::nova
+  Class['Openstack::Keystone'] -> Class['Openstack::Nova']
 
   # include openstack::neutron
   # Class['Openstack::Nova'] -> Class['Openstack::Neutron']
