@@ -28,24 +28,6 @@ FORGE
       puppetlabs-apache (< 2.0.0, >= 1.0.0)
       puppetlabs-inifile (< 2.0.0, >= 1.0.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
-    openstack-neutron (7.0.0)
-      duritong-sysctl (< 1.0.0, >= 0.0.1)
-      openstack-keystone (< 8.0.0, >= 7.0.0)
-      openstack-nova (< 8.0.0, >= 7.0.0)
-      openstack-openstacklib (< 8.0.0, >= 7.0.0)
-      openstack-vswitch (< 4.0.0, >= 3.0.0)
-      puppetlabs-inifile (< 2.0.0, >= 1.0.0)
-      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
-    openstack-nova (7.0.0)
-      dprince-qpid (< 2.0.0, >= 1.0.0)
-      duritong-sysctl (< 1.0.0, >= 0.0.1)
-      openstack-cinder (< 8.0.0, >= 7.0.0)
-      openstack-glance (< 8.0.0, >= 7.0.0)
-      openstack-keystone (< 8.0.0, >= 7.0.0)
-      openstack-openstacklib (< 8.0.0, >= 7.0.0)
-      puppetlabs-inifile (< 2.0.0, >= 1.0.0)
-      puppetlabs-rabbitmq (< 6.0.0, >= 2.0.2)
-      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
     openstack-openstacklib (7.0.0)
       puppetlabs-apache (< 2.0.0, >= 1.0.0)
       puppetlabs-inifile (< 2.0.0, >= 1.0.0)
@@ -71,6 +53,10 @@ FORGE
       puppetlabs-concat (< 2.0.0, >= 1.0.0)
       puppetlabs-firewall (>= 0.0.4)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs-rabbitmq (5.3.1)
+      nanliu-staging (< 2.0.0, >= 0.3.1)
+      puppetlabs-apt (< 3.0.0, >= 1.8.0)
+      puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
     puppetlabs-stdlib (4.10.0)
     saz-memcached (2.8.1)
       puppetlabs-firewall (>= 0.1.0)
@@ -79,14 +65,34 @@ FORGE
       puppetlabs-stdlib (>= 3.0.0)
 
 GIT
-  remote: https://github.com/puppetlabs/puppetlabs-rabbitmq.git
+  remote: git@github.com:stieizc/puppet-nova.git
   ref: master
-  sha: 5f428e92f1d956c5ad37bb7dec81306feb92df94
+  sha: 46598ab12b23212ee0aebea0c2a4e9cf2d33d77e
   specs:
-    puppetlabs-rabbitmq (5.3.1)
-      nanliu-staging (< 2.0.0, >= 0.3.1)
-      puppetlabs-apt (< 3.0.0, >= 1.8.0)
-      puppetlabs-stdlib (< 5.0.0, >= 3.0.0)
+    openstack-nova (7.0.0)
+      dprince-qpid (< 2.0.0, >= 1.0.0)
+      duritong-sysctl (< 1.0.0, >= 0.0.1)
+      openstack-cinder (< 8.0.0, >= 7.0.0)
+      openstack-glance (< 8.0.0, >= 7.0.0)
+      openstack-keystone (< 8.0.0, >= 7.0.0)
+      openstack-openstacklib (< 8.0.0, >= 7.0.0)
+      puppetlabs-inifile (< 2.0.0, >= 1.0.0)
+      puppetlabs-rabbitmq (< 6.0.0, >= 2.0.2)
+      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
+
+GIT
+  remote: https://github.com/openstack/puppet-neutron.git
+  ref: master
+  sha: 23875c218f802e3cc8f2f8f6fa09d89e97194878
+  specs:
+    openstack-neutron (7.0.0)
+      duritong-sysctl (< 1.0.0, >= 0.0.1)
+      openstack-keystone (< 8.0.0, >= 7.0.0)
+      openstack-nova (< 8.0.0, >= 7.0.0)
+      openstack-openstacklib (< 8.0.0, >= 7.0.0)
+      openstack-vswitch (< 4.0.0, >= 3.0.0)
+      puppetlabs-inifile (< 2.0.0, >= 1.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.0.0)
 
 DEPENDENCIES
   aboe-chrony (>= 0)
