@@ -12,8 +12,7 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'stahnma/epel'
 mod 'aboe/chrony'
 mod 'puppetlabs/mysql'
-mod 'puppetlabs/rabbitmq',
-    :git => 'https://github.com/puppetlabs/puppetlabs-rabbitmq.git'
+mod 'puppetlabs/rabbitmq'
 mod 'openstack/keystone'
 mod 'openstack/glance'
 mod 'openstack/nova'
