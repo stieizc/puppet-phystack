@@ -31,5 +31,8 @@ inherits openstack::glance::params {
   }
 
   include ::glance::db::sync
-  File<| tag == 'glance-config' |> ~> Class[Glance::Db::Sync]
+  File<| tag == 'glance-config' |> ~> [
+    Class[Glance::Db::Sync],
+    Service<| tag == 'glance-service' |>,
+  ]
 }
