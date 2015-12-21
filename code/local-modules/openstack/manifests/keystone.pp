@@ -10,11 +10,10 @@ inherits openstack::keystone::params {
     ensure => latest,
   }
 
-  file { '/etc/keystone/keystone.conf':
+  file { $openstack::keystone::params::config:
     ensure  => file,
     content => epp('openstack/keystone/keystone.conf.epp'),
     backup  => '.puppet-bak',
-    notify  => Service['httpd'],
   }
 
   class { '::keystone::db::mysql':
@@ -24,6 +23,12 @@ inherits openstack::keystone::params {
   }
 
   include '::keystone::db::sync'
+
+  [
+    File[$openstack::keystone::params::config],
+    Class[Keystone::Db::Mysql],
+    Class[Keystone::Db::Sync],
+  ] ~> Service[Httpd]
 
   class { '::keystone::wsgi::apache':
     ssl => false,

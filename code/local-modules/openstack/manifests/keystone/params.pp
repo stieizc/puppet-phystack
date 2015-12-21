@@ -10,4 +10,5 @@ class openstack::keystone::params {
   | EOT
   $admin_token = hiera('keystone::admin_token')
   $packages = [openstack-keystone]
+  $config = '/etc/keystone/keystone.conf'
 }
