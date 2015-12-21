@@ -25,10 +25,13 @@ class openstack::nova::params {
     openstack-nova-compute, sysfsutils
   ]
 
-  $services = [
+  $controller_services = [
     openstack-nova-api, openstack-nova-cert, openstack-nova-consoleauth,
     openstack-nova-scheduler, openstack-nova-conductor,
-    openstack-nova-novncproxy,
+    openstack-nova-novncproxy
+  ]
+
+  $compute_services = [
     libvirtd, openstack-nova-compute
   ]
 }

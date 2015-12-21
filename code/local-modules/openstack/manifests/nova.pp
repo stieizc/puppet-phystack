@@ -7,7 +7,7 @@ inherits openstack::nova::params {
   ->
   class { 'openstack::nova::db': }
   ->
-  class { 'openstack::nova::service': }
-  ->
   class { 'openstack::nova::credentials': }
+  ->
+  class { 'openstack::nova::service': }
 }

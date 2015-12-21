@@ -7,7 +7,7 @@ inherits openstack::glance::params {
   ->
   class { 'openstack::glance::db': }
   ->
-  class { 'openstack::glance::service': }
-  ->
   class { 'openstack::glance::credentials': }
+  ->
+  class { 'openstack::glance::service': }
 }
