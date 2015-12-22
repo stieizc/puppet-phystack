@@ -40,3 +40,17 @@ lock_path = /var/lib/nova/tmp
 
 [conductor]
 use_local = True
+
+[neutron]
+url = http://localhost:9696
+auth_url = http://localhost:35357
+auth_plugin = password
+project_domain_id = default
+user_domain_id = default
+region_name = RegionOne
+project_name = service
+username = <%= $openstack::neutron::params::keystone_user %>
+password = <%= $openstack::neutron::params::keystone_password %>
+
+service_metadata_proxy = True
+metadata_proxy_shared_secret = <%= $openstack::neutron::params::metadata_shared_secret %>

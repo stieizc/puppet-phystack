@@ -1,0 +1,15 @@
+# -*- mode: Conf -*-
+[linux_bridge]
+physical_interface_mappings = public:<%= $openstack::neutron::params::linux_bridge['public_int'] %>
+
+[vxlan]
+enable_vxlan = True
+local_ip = <%= $::ipaddress %>
+l2_population = True
+
+[agent]
+prevent_arp_spoofing = True
+
+[securitygroup]
+enable_security_group = True
+firewall_driver = neutron.agent.linux.iptables_firewall.IptablesFirewallDriver

@@ -15,4 +15,18 @@ class openstack::neutron::params {
   $rabbit_user = $rabbit_user_data['name']
   $rabbit_password = $rabbit_user_data['password']
   $metadata_shared_secret = hiera('neutron::metadata')['secret']
+
+  $linux_bridge_config = hiera('neutron::ml2::linux_bridge')
+
+  $packages = [
+    openstack-neutron, openstack-neutron-ml2,
+    openstack-neutron-linuxbridge, python-neutronclient,
+    ebtables, ipset,
+  ]
+
+  $services = [
+    neutron-server, neutron-linuxbridge-agent, neutron-dhcp-agent,
+    neutron-metadata-agent,
+    neutron-l3-agent
+  ]
 }

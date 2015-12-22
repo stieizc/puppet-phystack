@@ -1,0 +1,21 @@
+# -*- mode: Conf -*-
+[ml2]
+type_drivers = flat,vlan,vxlan
+
+[ml2]
+tenant_network_types = vxlan
+
+[ml2]
+mechanism_drivers = linuxbridge,l2population
+
+[ml2]
+extension_drivers = port_security
+
+[ml2_type_flat]
+flat_networks = public
+
+[ml2_type_vxlan]
+vni_ranges = 1:1000
+
+[securitygroup]
+enable_ipset = True

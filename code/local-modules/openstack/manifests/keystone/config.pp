@@ -3,14 +3,14 @@
 class openstack::keystone::config
 inherits openstack::keystone::params {
   group { 'keystone':
-    ensure  => present,
-    system  => true,
+    ensure => present,
+    system => true,
   }
 
   user { 'keystone':
-    ensure  => 'present',
-    gid     => 'keystone',
-    system  => true,
+    ensure => 'present',
+    gid    => 'keystone',
+    system => true,
   }
 
   file { ['/etc/keystone', '/var/log/keystone', '/var/lib/keystone']:
