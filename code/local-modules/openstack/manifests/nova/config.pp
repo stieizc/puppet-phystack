@@ -1,6 +1,7 @@
 # Openstack Nova config
 class openstack::nova::config
 inherits openstack::nova::params {
+  include openstack::neutron::params
   group { 'nova':
     ensure  => present,
     system  => true,

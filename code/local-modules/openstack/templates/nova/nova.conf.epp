@@ -33,7 +33,8 @@ host = localhost
 enabled = True
 vncserver_listen = 0.0.0.0
 vncserver_proxyclient_address = $my_ip
-novncproxy_base_url = http://localhost:6080/vnc_auto.html
+novncproxy_host=0.0.0.0
+novncproxy_base_url = http://<%= $::ipaddress %>:6080/vnc_auto.html
 
 [oslo_concurrency]
 lock_path = /var/lib/nova/tmp

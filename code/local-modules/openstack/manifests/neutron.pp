@@ -1,8 +1,13 @@
 # Openstack Neutron Setup
 class openstack::neutron
 inherits openstack::neutron::params {
-
-  include openstack::neutron::ml2
-  include openstack::neutron::l3
-  include openstack::neutron::compute
+  class { 'openstack::neutron::install': }
+  ->
+  class { 'openstack::neutron::config': }
+  ->
+  class { 'openstack::neutron::db': }
+  ->
+  class { 'openstack::neutron::credentials': }
+  ->
+  class { 'openstack::neutron::service': }
 }

@@ -2,6 +2,7 @@
 
 class openstack::neutron::config
 inherits openstack::neutron::params {
+  include openstack::neutron::params
   group { 'neutron':
     ensure => present,
     system => true,
@@ -29,7 +30,7 @@ inherits openstack::neutron::params {
     'plugins/ml2/linuxbridge_agent.ini', 'l3_agent.ini', 'dhcp_agent.ini',
     'metadata_agent.ini'
   ].each |String $config| {
-    file { $config:
+    file { "/etc/neutron/$config":
       ensure  => file,
       content => epp("openstack/neutron/${config}.epp"),
       mode    => '0600',
@@ -40,9 +41,20 @@ inherits openstack::neutron::params {
     }
   }
 
+  file { '/etc/neutron/dnsmasq-neutron.conf':
+      ensure  => file,
+      source  => "puppet:///modules/openstack/neutron/dnsmasq-neutron.conf",
+      mode    => '0600',
+      owner   => 'neutron',
+      group   => 'neutron',
+      require => [Group['neutron'], User['neutron']],
+      backup  => '.puppet-bak',
+  }
+
   file { '/etc/neutron/plugin.ini':
     ensure => link,
     target => '/etc/neutron/plugins/ml2/ml2_conf.ini',
+    require => [File['/etc/neutron/plugins/ml2/ml2_conf.ini']],
   }
 }
 

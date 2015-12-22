@@ -16,8 +16,8 @@ class profile::openstack::controller {
   include openstack::nova
   Class['Openstack::Keystone'] -> Class['Openstack::Nova']
 
-  # include openstack::neutron
-  # Class['Openstack::Nova'] -> Class['Openstack::Neutron']
+  include openstack::neutron
+  Class['Openstack::Nova'] -> Class['Openstack::Neutron']
 
   # include openstack::horizon
   # [Class['Openstack::Nova'], Class['Openstack::neutron']] -> Class['Openstack::Horizon']
