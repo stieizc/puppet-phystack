@@ -8,8 +8,7 @@ inherits openstack::neutron::params {
     {
       ensure    => running,
       enable    => true,
-    }
-  )
+    })
 
   service { $openstack::neutron::params::services:
     ensure    => running,

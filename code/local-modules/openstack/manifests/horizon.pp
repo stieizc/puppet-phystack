@@ -1,9 +1,19 @@
 # Openstack Horizon Setup
 class openstack::horizon
 inherits openstack::horizon::params {
-  class { 'openstack::horizon::install': }
+  class { '::horizon':
+    cache_backend         =>
+    'django.core.cache.backends.memcached.MemcachedCache',
+    cache_server_ip       => 'localhost',
+    allowed_hosts         => '*',
+    secret_key            => $openstack::horizon::params::secret,
+    keystone_default_role => 'user',
+  }
   ->
-  class { 'openstack::horizon::config': }
-  ->
-  class { 'openstack::horizon::service': }
+  file_line { 'horizon time zone':
+    ensure => present,
+    path   => '/etc/openstack-dashboard/local_settings',
+    line   => 'TIME_ZONE = "Asia/Shanghai"',
+    match  => 'TIME_ZONE = .*',
+  }
 }
