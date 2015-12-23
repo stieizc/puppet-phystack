@@ -8,6 +8,7 @@ inherits openstack::horizon::params {
     allowed_hosts         => '*',
     secret_key            => $openstack::horizon::params::secret,
     keystone_default_role => 'user',
+    configure_apache      => false,
   }
   ->
   file_line { 'horizon time zone':
@@ -15,5 +16,8 @@ inherits openstack::horizon::params {
     path   => '/etc/openstack-dashboard/local_settings',
     line   => 'TIME_ZONE = "Asia/Shanghai"',
     match  => 'TIME_ZONE = .*',
+  }
+  class { '::horizon::wsgi::apache':
+    priority => '10',
   }
 }
