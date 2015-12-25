@@ -25,8 +25,11 @@ auth_plugin = password
 project_domain_id = default
 user_domain_id = default
 project_name = service
+admin_tenant_name = service
 username = <%= $openstack::neutron::params::keystone_user %>
+admin_user = <%= $openstack::neutron::params::keystone_user %>
 password = <%= $openstack::neutron::params::keystone_password %>
+admin_password = <%= $openstack::neutron::params::keystone_password %>
 
 [oslo_concurrency]
 lock_path = /var/lib/neutron/tmp

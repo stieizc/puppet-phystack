@@ -10,4 +10,6 @@ inherits openstack::neutron::params {
   class { 'openstack::neutron::credentials': }
   ->
   class { 'openstack::neutron::service': }
+  ->
+  class { 'openstack::neutron::networks': }
 }
