@@ -6,6 +6,7 @@ inherits openstack::keystone::params {
     user     => $openstack::keystone::params::db_user,
     password => $openstack::keystone::params::db_password,
     dbname   => $openstack::keystone::params::db_name,
+    host     => 'localhost',
   }
 
   exec { 'keystone-manage db_sync':
