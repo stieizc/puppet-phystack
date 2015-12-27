@@ -39,5 +39,7 @@ class openstack::neutron::networks {
     tenant_name          => 'demo',
   }
   ->
-  neutron_router_interface { 'ext-router:private': }
+  neutron_router_interface { 'ext-router:private':
+    ensure => present,
+  }
 }
