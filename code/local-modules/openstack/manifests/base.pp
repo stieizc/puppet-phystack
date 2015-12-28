@@ -5,4 +5,8 @@ class openstack::base {
   package { ['openstack-selinux']:
     ensure => latest
   }
+  ->
+  class { '::selinux':
+    mode => 'permissive',
+  }
 }

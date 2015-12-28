@@ -23,6 +23,7 @@ mod 'openstack/horizon'
 mod 'puppetlabs/apt', '1.8.0'
 mod 'puppetlabs/stdlib'
 #mod 'puppetlabs/vcsrepo'
+mod 'jfryman/selinux'
 
 # A module from git
 # mod 'puppetlabs-ntp',
