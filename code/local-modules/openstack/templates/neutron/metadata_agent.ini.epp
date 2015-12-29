@@ -1,0 +1,13 @@
+# -*- mode: Conf -*-
+[DEFAULT]
+auth_uri = http://localhost:5000
+auth_url = http://localhost:35357
+auth_region = RegionOne
+auth_plugin = password
+project_domain_id = default
+user_domain_id = default
+project_name = service
+username = <%= $openstack::neutron::params::keystone_user %>
+password = <%= $openstack::neutron::params::keystone_password %>
+nova_metadata_ip = localhost
+metadata_proxy_shared_secret = <%= $openstack::neutron::params::metadata_shared_secret %>

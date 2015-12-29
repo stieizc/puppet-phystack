@@ -1,0 +1,12 @@
+[DEFAULT]
+admin_token = <%= $openstack::keystone::params::admin_token %>
+
+[database]
+connection = <%= $openstack::keystone::params::db_url %>
+
+[memcache]
+servers = localhost:11211
+
+[token]
+provider = uuid
+driver = memcache
