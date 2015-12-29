@@ -1,0 +1,45 @@
+[DEFAULT]
+rpc_backend = rabbit
+auth_strategy = keystone
+
+core_plugin = ml2
+service_plugins = router
+allow_overlapping_ips = True
+
+notify_nova_on_port_status_changes = True
+notify_nova_on_port_data_changes = True
+nova_url = http://localhost:8774/v2
+
+[database]
+connection = <%= $openstack::neutron::params::db_url %>
+
+[oslo_messaging_rabbit]
+rabbit_host = localhost
+rabbit_userid = <%= $openstack::neutron::params::rabbit_user %>
+rabbit_password = <%= $openstack::neutron::params::rabbit_password %>
+
+[keystone_authtoken]
+auth_uri = http://localhost:5000
+auth_url = http://localhost:35357
+auth_plugin = password
+project_domain_id = default
+user_domain_id = default
+project_name = service
+admin_tenant_name = service
+username = <%= $openstack::neutron::params::keystone_user %>
+admin_user = <%= $openstack::neutron::params::keystone_user %>
+password = <%= $openstack::neutron::params::keystone_password %>
+admin_password = <%= $openstack::neutron::params::keystone_password %>
+
+[oslo_concurrency]
+lock_path = /var/lib/neutron/tmp
+
+[nova]
+auth_url = http://localhost:35357
+auth_plugin = password
+project_domain_id = default
+user_domain_id = default
+region_name = RegionOne
+project_name = service
+username = <%= $openstack::nova::params::keystone_user %>
+password = <%= $openstack::nova::params::keystone_password %>

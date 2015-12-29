@@ -7,8 +7,8 @@ inherits openstack::nova::params {
     service_name        => 'nova',
     service_description => 'OpenStack Compute Service',
     tenant              => 'service',
-    public_url   => 'http://localhost:8774/v2/%(tenant_id)s',
-    internal_url => 'http://localhost:8774/v2/%(tenant_id)s',
-    admin_url    => 'http://localhost:8774/v2/%(tenant_id)s',
+    public_url          => 'http://localhost:8774/v2/%(tenant_id)s',
+    internal_url        => 'http://localhost:8774/v2/%(tenant_id)s',
+    admin_url           => 'http://localhost:8774/v2/%(tenant_id)s',
   }
 }

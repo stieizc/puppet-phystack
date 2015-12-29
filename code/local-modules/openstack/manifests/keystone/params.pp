@@ -9,4 +9,5 @@ class openstack::keystone::params {
   @localhost/${uriescape($db_name)}\
   | EOT
   $admin_token = hiera('keystone::admin_token')
+  $config = '/etc/keystone/keystone.conf'
 }
