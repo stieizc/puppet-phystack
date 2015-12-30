@@ -2,6 +2,7 @@
 class openstack::neutron::networks {
   neutron_network { 'public':
     ensure                    => present,
+    tenant_name               => 'admin',
     shared                    => true,
     provider_physical_network => 'public',
     provider_network_type     => 'flat',
@@ -26,16 +27,16 @@ class openstack::neutron::networks {
     dns_nameservers => ['233.5.5.5'],
   }
   ->
-  neutron_router { 'demo-router':
+  neutron_router { 'ext-router':
     ensure                => present,
-    tenant_name           => 'demo',
+    tenant_name           => 'admin',
     gateway_network_name  => 'public',
-    external_gateway_info => {
-      external_fixed_ips => $::ipaddress,
-    },
+    #external_gateway_info => {
+    #  external_fixed_ips => $::ipaddress,
+    #},
   }
   ->
-  neutron_router_interface { 'ext-router:private':
+  neutron_router_interface { 'ext-router:demo-subnet':
     ensure => present,
   }
 }
