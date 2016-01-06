@@ -16,7 +16,8 @@ class openstack::neutron::params {
   $rabbit_password = $rabbit_user_data['password']
   $metadata_shared_secret = hiera('neutron::metadata')['secret']
 
-  $linux_bridge = hiera('neutron::ml2::linux_bridge')
+  $physical_interface_mappings = hiera('neutron::physical_interface_mappings')
+  $flat_networks = hiera('neutron::flat_networks')
 
   $packages = [
     openstack-neutron, openstack-neutron-ml2,

@@ -12,7 +12,7 @@ mechanism_drivers = linuxbridge,l2population
 extension_drivers = port_security
 
 [ml2_type_flat]
-flat_networks = public
+flat_networks = <%= $openstack::neutron::params::flat_networks %>
 
 [ml2_type_vxlan]
 vni_ranges = 1:1000

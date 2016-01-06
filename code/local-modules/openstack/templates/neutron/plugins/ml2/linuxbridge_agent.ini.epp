@@ -1,6 +1,6 @@
 # -*- mode: Conf -*-
 [linux_bridge]
-physical_interface_mappings = public:<%= $openstack::neutron::params::linux_bridge['public_int'] %>
+physical_interface_mappings = <%= $openstack::neutron::params::physical_interface_mappings %>
 
 [vxlan]
 enable_vxlan = True
