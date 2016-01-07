@@ -18,6 +18,7 @@ class openstack::neutron::params {
 
   $physical_interface_mappings = hiera('neutron::physical_interface_mappings')
   $flat_networks = hiera('neutron::flat_networks')
+  $uplink_router_v6_lla = hiera('neutron::uplink_router_v6_lla')
 
   $packages = [
     openstack-neutron, openstack-neutron-ml2,

@@ -2,3 +2,4 @@
 [DEFAULT]
 interface_driver = neutron.agent.linux.interface.BridgeInterfaceDriver
 external_network_bridge =
+ipv6_gateway = <%= $openstack::neutron::params::uplink_router_v6_lla %>
